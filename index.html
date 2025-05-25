@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mufid AI - ইসলামিক প্রশ্নোত্তর</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="main-content">
+    <div class="container">
+        <header>
+                    <button class="menu-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+            <h1>Mufid AI</h1>
+            <p class="subtitle">দ্বীনের আলোর পথে আপনার ডিজিটাল সঙ্গী</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <textarea 
+                    id="questionInput" 
+                    placeholder="আপনার ইসলামিক প্রশ্নটি এখানে লিখুন..."
+                    rows="4"
+                ></textarea>
+                <button class="clear-btn" id="clearButton">✕</button>
+                <button id="sendButton">
+                    <span>প্রশ্ন করুন</span>
+                    <div class="spinner"></div>
+                </button>
+            </div>
+
+            <div class="response-section" id="responseSection">
+                <div class="response-container">
+                    <div class="summary-section">
+                        <h3>সংক্ষিপ্ত উত্তর</h3>
+                        <p id="summaryText"></p>
+                    </div>
+                    <div class="detailed-section">
+                        <h3>বিস্তারিত ব্যাখ্যা</h3>
+                        <div id="detailedText"></div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p id="rotatingQuote"></p>
+        </footer>
+            </div>
+        </div>
+
+        <div class="side-panel">
+            <div class="side-panel-header">
+                <h2>মেনু</h2>
+                <button class="toggle-panel-btn">✕</button>
+            </div>
+            <div class="side-panel-content">
+                <button class="favorites-view-btn">
+                    <span class="arrow">▼</span>
+                    <span>ফেভারিট উত্তরসমূহ</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="favorites-list"></div>
+                <button class="contact-dev-btn">
+                    <span class="arrow">▼</span>
+                    <span>Contact to Developer</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="developer-info">
+                    <p>This app developed by Tanvir Hasan</p>
+                    <a href="https://tanvirrrhasan.github.io/portfolio/" target="_blank">Visit Portfolio</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
