@@ -422,7 +422,7 @@ function showFavorites() {
     } else {
         favorites.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
         
-        const favoritesHTML = favorites.map((fav, index) => {
+        const favoritesHTML = favorites.map((fav) => {
             // Remove the first colon and everything before it
             const text = fav.text.replace(/^[^:]*:\s*/, '');
             return `
@@ -433,7 +433,7 @@ function showFavorites() {
                     </div>
                     <div class="favorite-actions">
                         <button class="copy-btn" data-text="${fav.text}">কপি করুন</button>
-                        <button class="remove-favorite-btn" data-index="${index}">
+                        <button class="remove-favorite-btn" data-timestamp="${fav.timestamp}">
                             <span>মুছে ফেলুন</span>
                         </button>
                     </div>
@@ -476,16 +476,16 @@ function showFavorites() {
     
     favoritesList.querySelectorAll('.remove-favorite-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            const index = parseInt(btn.getAttribute('data-index'));
-            removeFavorite(index);
+            const timestamp = btn.getAttribute('data-timestamp');
+            removeFavorite(timestamp);
         });
     });
 }
 
 // Remove favorite
-function removeFavorite(index) {
+function removeFavorite(timestamp) {
     let favorites = JSON.parse(localStorage.getItem('favorites') || '[]');
-    favorites.splice(index, 1);
+    favorites = favorites.filter(fav => fav.timestamp !== timestamp);
     localStorage.setItem('favorites', JSON.stringify(favorites));
     showFavorites();
 }

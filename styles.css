@@ -448,7 +448,7 @@ footer {
 }
 
 .favorites-view-btn, .contact-dev-btn {
-    background: var(--primary-color);
+    background: linear-gradient(135deg, var(--gradient-end), var(--gradient-start));
     border: none;
     color: white;
     padding: 1rem;
@@ -486,7 +486,7 @@ footer {
 
 .favorites-view-btn.active, .contact-dev-btn.active {
     background: var(--secondary-color);
-    box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+    box-shadow: 0 0 15px rgba(47, 177, 52, 0.5);
     transform: translateY(-2px);
 }
 
@@ -501,7 +501,9 @@ footer {
 
 .developer-info.show {
     display: block;
+    background: rgba(31, 39, 17, 0.39);
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .developer-info p {
@@ -588,7 +590,7 @@ footer {
 }
 
 .favorite-item {
-    background: rgba(41, 129, 47, 0.178);
+    background: rgba(30, 92, 35, 0.719);
     border-radius: 12px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -920,8 +922,9 @@ footer {
 }
 
 .favorite-item {
-    background: rgba(41, 129, 47, 0.178);
+    background: rgba(47, 68, 19, 0.527);
     backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 12px;
     padding: 1rem;
 }
