@@ -501,11 +501,12 @@ footer {
 
 .developer-info.show {
     display: block;
+    backdrop-filter: blur(3px);
 }
 
 .developer-info p {
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 1.1rem;
 }
 
