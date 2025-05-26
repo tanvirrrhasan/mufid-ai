@@ -128,7 +128,7 @@ h1 {
     border: 2px solid var(--border-color);
     border-radius: 12px;
     font-family: inherit;
-    font-size: 1.1rem;
+    font-size: 0.85rem;
     resize: vertical;
     background-color: var(--background-color);
     color: var(--text-color);
@@ -633,7 +633,7 @@ footer {
 .view-more-btn {
     background: none;
     border: none;
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 0.9rem;
     cursor: pointer;
     padding: 0.3rem 0;
@@ -835,13 +835,14 @@ footer {
 }
 
 .main-content.side-panel-open {
-    margin-left: 350px;
+    margin-right: 350px;
+    margin-left: 0;
 }
 
 .side-panel {
     position: fixed;
     top: 0;
-    left: -350px;
+    right: -350px;
     width: 350px;
     height: 100vh;
     background: var(--background-color);
@@ -849,22 +850,22 @@ footer {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    box-shadow: 2px 0 10px var(--shadow-color);
-    transition: left 0.3s ease;
+    box-shadow: -2px 0 10px var(--shadow-color);
+    transition: right 0.3s ease;
     z-index: 1000;
     display: flex;
     flex-direction: column;
 }
 
 .side-panel.open {
-    left: 0;
+    right: 0;
 }
 
 .side-panel-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem;
+    padding: 2rem;
     background: var(--primary-color);
     color: white;
     position: relative;
@@ -880,7 +881,7 @@ footer {
     background: none;
     border: none;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     cursor: pointer;
     padding: 0.5rem;
     line-height: 1;
@@ -950,22 +951,22 @@ footer {
 
 @media (max-width: 768px) {
     .main-content.side-panel-open {
-        margin-left: 0;
+        margin-right: 0;
     }
 
     .side-panel {
         width: 100%;
-        left: -100%;
+        right: -100%;
     }
 
     .side-panel.open {
-        left: 0;
+        right: 0;
     }
 }
 
 .menu-btn {
     position: absolute;
-    left: 1rem;
+    right: 1rem;
     top: 1rem;
     background: none;
     border: none;
@@ -1015,5 +1016,31 @@ main {
     .icon-btn svg {
         width: 20px;
         height: 20px;
+    }
+}
+
+.favorite-actions .copy-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+}
+
+.favorite-actions .copy-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .favorite-actions .copy-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+        min-width: 80px;
     }
 } 
